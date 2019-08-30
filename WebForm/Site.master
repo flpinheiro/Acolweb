@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Progrma desenvolvido como forma de avaliação de entrevista de emprego para a Alcoweb" />
+    <meta name="author" content="Felipe Luis Pinheiro" />
+
+    <title><%: Page.Title %></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>  
+
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"  type="text/css" />
+
+        <style>
+        .tabuada {
+            width:200px;
+            max-width:200px;
+            margin: 7px 7px 8px 8px;
+            padding:10px;
+            border: 1px solid black;
+        }
+        .colored {
+            background-color:dodgerblue;
+        }
+    </style>
+
+</head>
+<body>
+    <form runat="server">
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

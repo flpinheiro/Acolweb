@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Tabuada";
+}
+
+<h1>Tabuada</h1>
+<form method="post">
+    <fieldset>
+        
+        <div>
+            <label for="Max">Quantas tabuadas deseja gerar?</label>
+            <input type="number" name="Max" value="" />
+        </div>
+        <div>
+            <label>&nbsp;</label>
+            <input type="submit" value="Gerar Tabuada" class="submit" />
+        </div>
+    </fieldset>
+</form>
+
+<div class="container">
+    @{
+        string divClass = "";
+        int result;
+        if (IsPost)
+        {
+            var Max = Request.Form["Max"].AsInt();
+            var i = 1;
+            while (i <= Max)
+            {
+                <div class="row">
+
+                    @for (var j = 0; j < 5 && i <= Max; j++, i++)
+                    {
+                        if (i % 2 == 0)
+                        {
+                            divClass = "col-2 tabuada";
+                        }
+                        else
+                        {
+                            divClass = "col-2 tabuada colored";
+                        }
+                        <div class="@divClass">
+
+                            @for (int k = 0; k < 11; k++)
+                            {
+                                result = i * k;
+
+                                <p>@i x @k = @result</p>
+
+                            }
+
+                        </div>
+                    }
+                </div>
+            }
+        }
+    }
+</div>
